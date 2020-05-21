@@ -1,13 +1,11 @@
 chrome.storage.local.get("courses", function(items) {
-	var aTags = document.getElementsByTagName("a");
+	var divTags = document.querySelectorAll("div[data-courseid]");
 	var searchTexts = items["courses"].split("\n");
-	var found;
 
-	for (var j = 0; j < searchTexts.length; j++) {
-		for (var i = 0; i < aTags.length; i++) {
-
-			if (aTags[i].textContent.includes(searchTexts[j])) {
-				aTags[i].parentElement.parentElement.parentElement.remove();;
+	for (var i = 0; i < divTags.length; i++) {
+		for (var j = 0; j < searchTexts.length; j++) {
+			if (divTags[i].innerHTML.includes(searchTexts[j])) {
+				divTags[i].remove();
 				break;
 			}
 		}
