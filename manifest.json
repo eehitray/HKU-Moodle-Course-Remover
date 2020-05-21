@@ -1,0 +1,16 @@
+{
+  "name": "HKU Moodle Course Remover",
+  "version": "1.0",
+  "description": "Removes old courses from HKU Moodle.",
+  "permissions": ["storage", "declarativeContent", "activeTab"],
+  "content_scripts": [
+  	{
+  		"matches": ["https://*/*"],
+  		"js": ["content.js"]
+  	}
+  ],
+  "browser_action": {
+      "default_popup": "popup.html"
+    },
+  "manifest_version": 2
+}
